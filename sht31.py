@@ -75,7 +75,7 @@ vpd = calc_vpd(temp, humi)
 print('temp {:.4f} / humi {:.4f} / vpd {:.4f}'.format(temp, humi, vpd))
 
 today = datetime.datetime.now()
-fiap = pyfiap.fiap.APP("http://iot.info.nara-k.ac.jp/fiapd/axis2/services/FIAPStorage?wsdl")
+fiap = pyfiap.fiap.APP("http://iot.info.nara-k.ac.jp/axis2/services/FIAPStorage?wsdl")
 fiap.write([['http://tomato.fukuoka.lab/sht31/temperature', "{:.2f}".format(temp), today],
             ['http://tomato.fukuoka.lab/sht31/humidity', "{:.2f}".format(humi), today],
             ['http://tomato.fukuoka.lab/sht31/VPD', "{:.4f}".format(vpd), today],

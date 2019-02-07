@@ -178,7 +178,7 @@ readData()
 #print("Soil[%]   : {:.2f}".format(soil_humi))
 
 today = datetime.datetime.now()
-fiap = pyfiap.fiap.APP("http://iot.info.nara-k.ac.jp/fiapd/axis2/services/FIAPStorage?wsdl")
+fiap = pyfiap.fiap.APP("http://iot.info.nara-k.ac.jp/axis2/services/FIAPStorage?wsdl")
 fiap.write([['http://riceG1.iwalab.net/temperature', "{:.2f}".format(temperature), today],
             ['http://riceG1.iwalab.net/humidity', "{:.2f}".format(var_h), today],
             ['http://riceG1.iwalab.net/VPD', "{:.4f}".format(calc_vpd(temperature, var_h)), today],
